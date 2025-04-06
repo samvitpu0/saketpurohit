@@ -1,0 +1,102 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    background: #000;
+    color: #fff;
+  }
+  
+  h1, h2 {
+    text-align: center;
+    color: #fff;
+  }
+  
+  button {
+    padding: 12px 24px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #111;
+    color: #fff;
+    border: 1px solid #333;
+  }
+  
+  /* Landing Page */
+  .landing-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    transition: opacity 0.6s ease;
+  }
+  
+  .camera-image {
+    width: 300px;
+    transition: filter 0.8s ease;
+  }
+  
+  /* Zoom Animation */
+  @keyframes zoomIn {
+    0% {
+      transform: scale(1);
+      filter: blur(0px);
+    }
+    100% {
+      transform: scale(3);
+      filter: blur(10px);
+      opacity: 0;
+    }
+  }
+  
+  .camera-image.zoom-in {
+    animation: zoomIn 1.2s ease forwards;
+  }
+  
+  /* Main Site */
+  .main-site {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+    padding: 20px;
+  }
+  
+  /* Galleries */
+  .videos, .images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  video, img {
+    max-width: 300px;
+    border: 1px solid #444;
+  }
+  
+  /* Contact Form */
+  .contact form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .camera-image {
+      width: 200px;
+    }
+  
+    video, img {
+      max-width: 100%;
+    }
+  }
+  
